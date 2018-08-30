@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link type="text/css" rel="stylesheet" href="../public/css/style.css" />
+<script type="text/javascript" src="../public/javascript/jquery.min.js"></script>
+
+<script type="text/javascript"
+	src="../public/javascript/hw_plugin_public.js"></script>
+<!-- <script type="text/javascript" src="../public/javascript/vconsole.min.js"></script>
+ -->
+</head>
+<script type="text/javascript">
+	var resource = null;
+
+	function getResource() {
+		return resource;
+	}
+	function initPage1() {
+		var spanArray = document.getElementsByTagName("span");
+		for (var i = 0; i < spanArray.length; i++) {
+			var key = spanArray[i].getAttribute("local_key");
+			spanArray[i].innerHTML = getResource()[key];
+		}
+	}
+
+	$(document).ready(function() {
+		console.log("准备");
+		window.AppJsBridge.service.localeService.getResource({
+			"success" : function(data) {
+
+				console.log(data);
+				resource = data;
+				initPage1();
+			},
+			"error" : function(data) {
+				console.log(data);
+			}
+		});
+	})
+</script>
+
+<body>
+
+	<div class="backgroud">
+		<img id="pic" src="image/3-01.png" /> </br>
+		</br>
+		<p>
+			<strong><span class="installguide" local_key="OFF_NET"></span></strong>
+			<span class="installguide" local_key="OFF_DESC"></span>
+		</p>
+		</br>
+		</br>
+		<p>
+			<strong><span class="installguide" local_key="ON_NET"></span></strong>
+			<span class="installguide" local_key="ON_DESC"></span>
+		</p>
+		</br>
+		</br>
+		<p>
+			<strong><span class="installguide" local_key="WAIT_NET"></span></strong>
+			<span class="installguide" local_key="WAIT_DESC"></span>
+		</p>
+		</br>
+		</br>
+		<p>
+			<strong><span class="installguide" local_key="GO_NET"></span></strong>
+			<span class="installguide" local_key="GO_DESC"> </span>
+		</p>
+	</div>
+</body>
+</html>

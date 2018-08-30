@@ -1,0 +1,346 @@
+<products brand="GDKES" manufacturer="GDKES"
+	resource="resource/resource.properties" alarm-template="resource/alarm-template.properties"
+	brand-resource="GDKES" manufacturer-resource="GDKES"
+	xmlns:zigbee="http://openlife.huawei.com" public-js-path="public/javascript/hw_plugin_public.js">
+
+	<!-- 单键墙面开关 -->
+	<zigbee:product name="gdkesSingleWallSwitch"
+		description="Wall Switch" title="GDKES_SINGLE_WALL_SWITCH" catalog="LIGHTANDSWITCH"
+		catalog-resource="CATALOG_LIGHTANDSWITCH"
+		driver-class="com.gdkes.standardzigbee.driver.SingleWallSwitchDriver">
+		<zigbee:config heartbeat="180">
+		</zigbee:config>
+		<zigbee:descriptors>
+			<node manufacturer-code="0x1163">
+			</node>
+			<endpoint id="1" profile="0x0104" device-id="0x0100"
+				device-version="3">
+				<in-clusters>
+					<cluster id="0x0000" />
+					<cluster id="0x0003" mapper="identifySensor" />
+					<cluster id="0x0004" />
+					<cluster id="0x0005" />
+					<cluster id="0x0006" />
+				</in-clusters>
+				<out-clusters>
+				</out-clusters>
+			</endpoint>
+		</zigbee:descriptors>
+		<classes>
+			<class name="identifySensor" />
+			<class name="signalSensor" />
+		</classes>
+		<properties>
+			<property name="count" type="integer" min="1" max="100"
+				title="SWITCH_COUNT"></property>
+			<property name="state1" type="enum" description="The state of switch 1"
+				title="SINGLE_SWITCH_STATE1">
+				<enum title="MULTI_SWITCH_STATE_ON">on</enum>
+				<enum title="MULTI_SWITCH_STATE_OFF">off</enum>
+			</property>
+			<property name="scene1" type="string">
+			</property>
+			<property name="bindleMsg" type="json">
+			</property>
+		</properties>
+		<actions>
+			<action name="turnOnFirst" description="Turn on the switch of the first index"
+				title="SINGLE_SWITCH_ACTION_TURN_ON_FIRST">
+			</action>
+			<action name="toggleFirst" description="Toggle the switch of the first index"
+				title="SINGLE_SWITCH_ACTION_TOGGLE_FIRST">
+			</action>
+			<action name="turnOffFirst" description="Turn off the switch of the first index"
+				title="SINGLE_SWITCH_ACTION_TURN_OFF_FIRST">
+			</action>
+			<action name="setSceneName">
+				<property name="scene1" type="string"></property>
+			</action>
+
+			<action name="bingding">
+				<property name="name" type="string"></property>
+				<property name="sn" type="string"></property>
+				<property name="key" type="string"></property>
+			</action>
+
+			<action name="unbandel">
+			</action>
+		</actions>
+		<ifttt>
+			<actions>
+				<action name="turnOnFirst" />
+				<action name="turnOffFirst" />
+				<action name="toggleFirst" />
+			</actions>
+		</ifttt>
+		<view>
+			<icon>k1/image/online1.png</icon>
+			<icon-offline>k1/image/offline1.png</icon-offline>
+			<device-status-info resource="SINGLEWALLSWITCH_STATUS" />
+			<device-control-entry>k1/control.html</device-control-entry>
+			<device-guide-entry>k1/install-guide.html</device-guide-entry>
+		</view>
+	</zigbee:product>
+
+	<!-- 双键墙面开关 -->
+	<zigbee:product name="gdkesDoubleWallSwitch"
+		description="Wall Switch" title="GDKES_DOUBLE_WALL_SWITCH" catalog="LIGHTANDSWITCH"
+		catalog-resource="CATALOG_LIGHTANDSWITCH"
+		driver-class="com.gdkes.standardzigbee.driver.DoubleWallSwitchDriver">
+		<zigbee:config heartbeat="180">
+		</zigbee:config>
+		<zigbee:descriptors>
+			<node manufacturer-code="0x1163">
+			</node>
+			<endpoint id="1" profile="0x0104" device-id="0x0100"
+				device-version="3">
+				<in-clusters>
+					<cluster id="0x0000" />
+					<cluster id="0x0003" mapper="identifySensor" />
+					<cluster id="0x0004" />
+					<cluster id="0x0005" />
+					<cluster id="0x0006" />
+				</in-clusters>
+				<out-clusters>
+				</out-clusters>
+			</endpoint>
+			<endpoint id="2" profile="0x0104" device-id="0x0100"
+				device-version="3">
+				<in-clusters>
+					<cluster id="0x0000" />
+					<cluster id="0x0003" mapper="identifySensor" />
+					<cluster id="0x0004" />
+					<cluster id="0x0005" />
+					<cluster id="0x0006" />
+				</in-clusters>
+				<out-clusters>
+				</out-clusters>
+			</endpoint>
+		</zigbee:descriptors>
+		<classes>
+			<class name="identifySensor" />
+			<class name="signalSensor" />
+		</classes>
+		<properties>
+			<property name="count" type="integer" min="1" max="100"
+				title="SWITCH_COUNT"></property>
+			<property name="state1" type="enum" description="The state of switch 1"
+				title="DOUBLE_SWITCH_STATE1">
+				<enum title="MULTI_SWITCH_STATE_ON">on</enum>
+				<enum title="MULTI_SWITCH_STATE_OFF">off</enum>
+			</property>
+			<property name="state2" type="enum" description="The state of switch 2"
+				title="DOUBLE_SWITCH_STATE2">
+				<enum title="MULTI_SWITCH_STATE_ON">on</enum>
+				<enum title="MULTI_SWITCH_STATE_OFF">off</enum>
+			</property>
+			<property name="scene1" type="string">
+			</property>
+			<property name="scene2" type="string">
+			</property>
+			<property name="bindleMsg" type="json">
+			</property>
+		</properties>
+		<actions>
+			<action name="turnOnFirst" description="Turn on the switch of the first index"
+				title="DOUBLE_SWITCH_ACTION_TURN_ON_FIRST">
+			</action>
+			<action name="toggleFirst" description="Toggle the switch of the first index"
+				title="DOUBLE_SWITCH_ACTION_TOGGLE_FIRST">
+			</action>
+			<action name="turnOffFirst" description="Turn off the switch of the first index"
+				title="DOUBLE_SWITCH_ACTION_TURN_OFF_FIRST">
+			</action>
+			<action name="turnOnSecond" description="Turn on the switch of the second index"
+				title="DOUBLE_SWITCH_ACTION_TURN_ON_SECOND">
+			</action>
+			<action name="toggleSecond" description="Toggle the switch of the second index"
+				title="DOUBLE_SWITCH_ACTION_TOGGLE_SECOND">
+			</action>
+			<action name="turnOffSecond" description="Turn off the switch of the second index"
+				title="DOUBLE_SWITCH_ACTION_TURN_OFF_SECOND">
+			</action>
+			<action name="setSceneName">
+				<property name="scene1" type="string"></property>
+			</action>
+			<action name="setSceneName2">
+				<property name="scene2" type="string"></property>
+			</action>
+			<action name="bingding">
+				<property name="name" type="string"></property>
+				<property name="sn" type="string"></property>
+				<property name="key" type="string"></property>
+			</action>
+
+			<action name="unbandel">
+
+			</action>
+		</actions>
+		<ifttt>
+			<actions>
+				<action name="turnOnFirst" />
+				<action name="turnOffFirst" />
+				<action name="toggleFirst" />
+				<action name="turnOnSecond" />
+				<action name="turnOffSecond" />
+				<action name="toggleSecond" />
+			</actions>
+		</ifttt>
+		<view>
+			<icon>k2/image/online2.png</icon>
+			<icon-offline>k2/image/offline2.png</icon-offline>
+			<device-status-info resource="DOUBLEWALLSWITCH_STATUS" />
+			<device-control-entry>k2/control.html</device-control-entry>
+			<device-guide-entry>k2/install-guide.html</device-guide-entry>
+		</view>
+	</zigbee:product>
+
+	<!-- 三键墙面开关 -->
+	<zigbee:product name="gdkesTripleWallSwitch"
+		description="Wall Switch" title="GDKES_TRIPLE_WALL_SWITCH" catalog="LIGHTANDSWITCH"
+		catalog-resource="CATALOG_LIGHTANDSWITCH"
+		driver-class="com.gdkes.standardzigbee.driver.TripleWallSwitchDriver">
+		<zigbee:config heartbeat="180">
+		</zigbee:config>
+		<zigbee:descriptors>
+			<node manufacturer-code="0x1163">
+			</node>
+			<endpoint id="1" profile="0x0104" device-id="0x0100"
+				device-version="3">
+				<in-clusters>
+					<cluster id="0x0000" />
+					<cluster id="0x0003" mapper="identifySensor" />
+					<cluster id="0x0004" />
+					<cluster id="0x0005" />
+					<cluster id="0x0006" />
+				</in-clusters>
+				<out-clusters>
+				</out-clusters>
+			</endpoint>
+			<endpoint id="2" profile="0x0104" device-id="0x0100"
+				device-version="3">
+				<in-clusters>
+					<cluster id="0x0000" />
+					<cluster id="0x0003" mapper="identifySensor" />
+					<cluster id="0x0004" />
+					<cluster id="0x0005" />
+					<cluster id="0x0006" />
+				</in-clusters>
+				<out-clusters>
+				</out-clusters>
+			</endpoint>
+			<endpoint id="3" profile="0x0104" device-id="0x0100"
+				device-version="3">
+				<in-clusters>
+					<cluster id="0x0000" />
+					<cluster id="0x0003" mapper="identifySensor" />
+					<cluster id="0x0004" />
+					<cluster id="0x0005" />
+					<cluster id="0x0006" />
+				</in-clusters>
+				<out-clusters>
+				</out-clusters>
+			</endpoint>
+		</zigbee:descriptors>
+		<classes>
+			<class name="identifySensor" />
+			<class name="signalSensor" />
+		</classes>
+		<properties>
+			<property name="count" type="integer" min="1" max="100"
+				title="SWITCH_COUNT"></property>
+			<property name="state1" type="enum" description="The state of switch 1"
+				title="TRIPLE_SWITCH_STATE1">
+				<enum title="MULTI_SWITCH_STATE_ON">on</enum>
+				<enum title="MULTI_SWITCH_STATE_OFF">off</enum>
+			</property>
+			<property name="state2" type="enum" description="The state of switch 2"
+				title="TRIPLE_SWITCH_STATE2">
+				<enum title="MULTI_SWITCH_STATE_ON">on</enum>
+				<enum title="MULTI_SWITCH_STATE_OFF">off</enum>
+			</property>
+			<property name="state3" type="enum" description="The state of switch 3"
+				title="TRIPLE_SWITCH_STATE3">
+				<enum title="MULTI_SWITCH_STATE_ON">on</enum>
+				<enum title="MULTI_SWITCH_STATE_OFF">off</enum>
+			</property>
+			<property name="scene1" type="string">
+			</property>
+			<property name="scene2" type="string">
+			</property>
+			<property name="scene3" type="string">
+			</property>
+			<property name="bindleMsg" type="json">
+			</property>
+		</properties>
+		<actions>
+			<!-- 场景中对一个键进行操作 -->
+			<action name="turnOnFirst" description="Turn on the switch of the first index"
+				title="TRIPLE_SWITCH_TURN_ON_FIRST">
+			</action>
+			<action name="toggleFirst" description="Toggle the switch of the first index"
+				title="TRIPLE_SWITCH_TOGGLE_FIRST">
+			</action>
+			<action name="turnOffFirst" description="Turn off the switch of the first index"
+				title="TRIPLE_SWITCH_TURN_OFF_FIRST">
+			</action>
+			<action name="turnOnSecond" description="Turn on the switch of the second index"
+				title="TRIPLE_SWITCH_TURN_ON_SECOND">
+			</action>
+			<action name="toggleSecond" description="Toggle the switch of the second index"
+				title="TRIPLE_SWITCH_TOGGLE_SECOND">
+			</action>
+			<action name="turnOffSecond" description="Turn off the switch of the second index"
+				title="TRIPLE_SWITCH_TURN_OFF_SECOND">
+			</action>
+			<action name="turnOnThird" description="Turn on the switch of the third index"
+				title="TRIPLE_SWITCH_TURN_ON_THIRD">
+			</action>
+			<action name="toggleThird" description="Toggle the switch of the third index"
+				title="TRIPLE_SWITCH_TOGGLE_THIRD">
+			</action>
+			<action name="turnOffThird" description="Turn off the switch of the third index"
+				title="TRIPLE_SWITCH_TURN_OFF_THIRD">
+			</action>
+			<action name="setSceneName">
+				<property name="scene1" type="string"></property>
+			</action>
+			<action name="setSceneName2">
+				<property name="scene2" type="string"></property>
+			</action>
+			<action name="setSceneName3">
+				<property name="scene3" type="string"></property>
+			</action>
+			<action name="bingding">
+				<property name="name" type="string"></property>
+				<property name="sn" type="string"></property>
+				<property name="key" type="string"></property>
+			</action>
+
+			<action name="unbandel">
+
+			</action>
+		</actions>
+		<ifttt>
+			<actions>
+				<action name="turnOnFirst" />
+				<action name="turnOffFirst" />
+				<action name="toggleFirst" />
+				<action name="turnOnSecond" />
+				<action name="turnOffSecond" />
+				<action name="toggleSecond" />
+				<action name="turnOnThird" />
+				<action name="turnOffThird" />
+				<action name="toggleThird" />
+			</actions>
+		</ifttt>
+		<view>
+			<icon>k3/image/online.png</icon>
+			<icon-offline>k3/image/offline.png</icon-offline>
+			<device-status-info resource="TRIPLEWALLSWITCH_STATUS" />
+			<device-control-entry>k3/control.html</device-control-entry>
+			<device-guide-entry>k3/install-guide.html</device-guide-entry>
+		</view>
+	</zigbee:product>
+</products>
+

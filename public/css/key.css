@@ -1,0 +1,198 @@
+html{
+    font-size:50px;
+}
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+.back {
+    width: 96%;
+    height: 60%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+    left: 2%;
+}
+
+.back_img {
+    width: 70%;
+    padding-bottom: 70%;
+    background-size: 100% 100%;
+}
+
+.back_img_div {
+    position: absolute;
+    width: 60%;
+    padding-bottom: 55%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.back_img_clickMain_div {
+  height: 100%;
+  width: 100%;
+}
+.back_img_click2_div {
+   padding-bottom: 90%;
+    width: 50%;
+    float: left;
+}
+.back_img_click3_div {
+    padding-bottom: 90%;
+    width: 33.33%;
+    float: left;
+}
+
+
+.back_img_light_div{
+    position: absolute;
+    width: 100%;
+    padding-bottom: 10%;
+    margin-top: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+.back_img_light_div_2Left{
+    width: 50%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+.back_img_light_div_3Left{
+    width: 33.33%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+
+.back_img_light {
+    border-radius: 0.06rem;
+    height: 0.13rem;
+    width: 0.43rem;
+    background-color: #cccccc;
+}
+
+.back_img_light_small_div{
+    position: absolute;
+    width: 70%;
+    padding-bottom: 10%;
+    margin-top: 62.5%;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+.back_img_light_small {
+    border-radius: 100%;
+    height: 0.14rem;
+    width: 0.14rem;
+    background-color: #cccccc;
+}
+
+.status_dsc {
+    position: absolute;
+    top: 63%;
+    font-size: 0.30rem;
+    color: #333333;
+    font-family: PingFang-SC-Medium;
+    width: 96%;
+    height: 4%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+
+.status {
+    position: absolute;
+    top: 69%;
+    font-size: 0.35rem;
+    color: #cccccc;
+    font-family: PingFang-SC-Bold;
+    width: 96%;
+    left: 2%;
+    height: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+
+.btn {
+    position: absolute;
+    top: 83%;
+    height: 10%;
+    width: 80%;
+    background-color: #ffffff;
+    font-size: 0.3rem;
+    font-family: PingFang-SC-Medium;
+    color: #333333;
+    border-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+    left: 10%;
+}
+
+.btns{
+    position: absolute;
+    top: 83%;
+    left: 2%;
+    height: 10%;
+    width: 96%;
+    font-size: 0.3rem;
+    font-family: PingFang-SC-Medium;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+
+.btn21{
+    float: left;
+    width: 49%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+.btn21_btn22{
+    float: left;
+    width: 2%;
+    height: 100%;
+}
+.btn31{
+    float: left;
+    width: 32.33%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}
+.btn31_btn32{
+    float: left;
+    width: 1%;
+    height: 100%;
+}
+
+
+.offLine {
+    position: absolute;
+    display: none;
+    top: 0rem;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 9999999;
+}
+
+
+
+

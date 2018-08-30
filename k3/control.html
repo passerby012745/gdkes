@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="../public/css/key.css"/>
+    <link rel="stylesheet" href="../public/css/changeNameCss.css"/>
+    <script type="text/javascript" src="../public/javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../public/javascript/hw_plugin_public.js"></script>
+    <script type="text/javascript" src="js/control.js"></script>
+    <script type="text/javascript" src="../public/javascript/vconsole.min.js"></script>
+</head>
+<body>
+<!--离线遮罩-->
+<div class="offLine"></div>
+<!--开关图层-->
+<div class="back">
+    <div class="back_img" style="background-image: url(../public/images/sanjian@2x.png)">
+        <div class="back_img_div">
+            <div class="back_img_clickMain_div">
+                <div class="back_img_click3_div" onclick="changState('one')"></div>
+                <div class="back_img_click3_div" onclick="changState('two')"></div>
+                <div class="back_img_click3_div" onclick="changState('three')"></div>
+            </div>
+            <!--按键颜色-->
+            <div class="back_img_light_div">
+                <div class="back_img_light_div_3Left">
+                    <div id="light31" class="back_img_light"></div>
+                </div>
+                <div class="back_img_light_div_3Left">
+                    <div id="light32" class="back_img_light"></div>
+                </div>
+                <div class="back_img_light_div_3Left">
+                    <div id="light33" class="back_img_light"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--指示灯颜色-->
+        <div class="back_img_light_small_div">
+            <div class="back_img_light_small"></div>
+        </div>
+    </div>
+</div>
+
+<!--状态-->
+
+<div class="status_dsc">
+    <span local_key="CURRENT_STATE"></span>
+</div>
+<!--实际状态-->
+<div class="status"></div>
+<!--按键名称-->
+<div class="btns">
+    <div class="btn31" id="btn1"></div>
+    <div class="btn31_btn32"></div>
+    <div class="btn31" id="btn2"></div>
+    <div class="btn31_btn32"></div>
+    <div class="btn31" id="btn3"></div>
+</div>
+<!--弹出改名层-->
+<div class="changeNameDiv">
+    <div class="haveInput">
+        <h3>
+            <span id="uiTitle"></span>
+        </h3>
+        <p>
+            <span local_key="Please_Enter_The_Note_Name"></span>
+        </p>
+        <p>
+            <input class="inputName" maxlength="6"/>
+        </p>
+
+        <div class="group">
+            <div class="ui-block-a">
+                <span local_key="CANCEL"></span>
+            </div>
+            <div class="ui-block-b">
+                <span local_key="OK"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
