@@ -5,7 +5,7 @@ var outID = null;
 var status = null;
 var primaryColor = null;//主色
 var minorColor = null;//次色
-
+var color=null;
 function getResource() {
     return resource;
 }
@@ -23,6 +23,7 @@ function initPage() {
 }
 
 function loadpage() {
+
     console.log(getCurrentDeviceSn());
     window.AppJsBridge.service.deviceService.getDevice({
         "sn": getCurrentDeviceSn(),
@@ -114,19 +115,16 @@ function doAction(action, para) {
 }
 
 function iosCallback(colorParam){
-    var color = JSON.parse(colorParam);
-     primaryColor = color.colorPrimary;
-     minorColor = color.colorPrimary2;
+     color = JSON.parse(colorParam);
+
 }
 
 $(document).ready(function () {
     var sUserAgent = navigator.userAgent.toLowerCase();
     if (sUserAgent.indexOf('android') > -1) {
         //android
-        //var color = JSON.parse(window.szsbay.getColorConfig());
-       // primaryColor = color.colorPrimary;
-       // minorColor = color.colorPrimary2;
-        primaryColor = "blue";
+         color = window.szsbay.getColorConfig();
+        //primaryColor = "blue";
 
 
     } else if (sUserAgent.indexOf('iphone') > -1 || sUserAgent.indexOf('ipad') > -1) {
@@ -135,6 +133,11 @@ $(document).ready(function () {
     } else {
         //pc
     }
+    console.log(color);
+    alert(color);
+    primaryColor = color.colorPrimary;
+    console.log(primaryColor);
+    minorColor = color.colorPrimary2;
     window.AppJsBridge.service.localeService.getResource({
         "success": function (data) {
             resource = data;
